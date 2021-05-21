@@ -6,6 +6,7 @@
     $db_name = "finalsem";
 
     $conn = mysqli_connect($sname, $uname, $password, $db_name);
+    mysqli_set_charset($conn,"utf8");
 
     if (!$conn) {
         echo "Connection failed!";
