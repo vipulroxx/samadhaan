@@ -47,7 +47,7 @@
                                     <input style="float: right; background: #1690A7; padding: 10px 15px; color: #fff; border-radius: 5px; margin-right: 0px; border: none; margin-top: 1.3em; text-decoration: none;" type="submit" value="View">
                                 </form>
                             </td>
-                            <td style="color: #1690A7;"><b><?php echo $row['status'] ?></b></td>
+                            <td style="color: #005869;"><b><?php echo $row['status'] ?></b></td>
                         </tr>
                         <?php } ?>
                     </table>

@@ -17,8 +17,8 @@
                   $row = mysqli_fetch_assoc($concern_result);
         ?>
         <div id="greeting">
-                    <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
-                    <a href="logout.php">Logout</a>
+            <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
+            <a href="logout.php">Logout</a>
         </div>
         <div class="concern-container" style="position:absolute; top: 15%; max-width: 800px;">
             <?php echo "<h2>Concern of ".$row['name']."</h2>"?>

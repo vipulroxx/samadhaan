@@ -17,9 +17,9 @@
                 <h1 style="font-size:30px;">Hello, <?php echo $_SESSION['name']; ?>!</h1>
                 <a style="position:absolute; right: 0px;"href="logout.php">Logout</a>
             </div>
-            <form style="position:relative; top: 6%;">
+            <form action="submit.php" style="position:relative; top: 6%;" method="POST">
                 <h2>Log Your Concern</h2>
-                <label for="housenumber">House Type</label>
+                <label for="housetype">House Type</label>
                 <select name="house-type" id="house-type">
                     <option value="type">Type</option>
                     <option value="A">A</option>
@@ -62,9 +62,9 @@
                     </optgroup>
                 </select><br><br>
                 <label>Explain Your Concern</label><br>
-                <textarea id="concern" rows="10" cols="50"></textarea><br>
+                <textarea name="concern" id="concern" rows="10" cols="50"></textarea><br>
                 <label>Upload Photo</label>
-                <input type="file">
+                <input type="file" name="concern-photo">
                 <button type="submit" style="float: none; width: 100%;">Submit Concern</button>
             </form>
         </body>
