@@ -20,9 +20,9 @@
             <div id="greeting">
                 <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
                 <a href="logout.php">Logout</a>
-            </div>
-            <input type="text" id="search-input" onkeyup="filter()" placeholder="Search for something.." title="Type in a query">
-            <div class="concern-container">
+            </div><br>
+            <input style="position:absolute; top: 15%; border-radius:10px;" type="text" id="search-input" onkeydown="filter()" placeholder="Search for something.." title="Type in a query">
+            <div class="concern-container" style="position: absolute; top: 22%;">
                 <table id="concern-table" style="border-collapse: collapse;"> 
                     <tr>
                         <th>Name</th>

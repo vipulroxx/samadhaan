@@ -21,7 +21,6 @@
                 <h2>Log Your Concern</h2>
                 <label for="housetype">House Type</label>
                 <select name="house-type" id="house-type">
-                    <option value="type">Type</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
@@ -30,7 +29,6 @@
                 </select>
                 <label for="housenumber">House Number</label>
                 <select name="house-number" id="house-number">
-                    <option value="number">Number</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -42,15 +40,70 @@
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
-                    <option value="1A">1A</option>
-                    <option value="1B">1B</option>
-                    <option value="2A">2A</option>
-                    <option value="2B">2B</option>
-                    <option value="3A">3A</option>
-                    <option value="3B">3B</option>
-                    <option value="4A">4A</option>
-                    <option value="4B">4B</option>
                 </select><br><br>
+                <script>
+                    const houseNumbers = {"A":[{value:1,desc:"1"},
+                                            {value:2,desc:"2"},
+                                            {value:3,desc:"3"},
+                                            {value:4,desc:"4"},
+                                            {value:5,desc:"5"},
+                                            {value:6,desc:"6"},
+                                            {value:7,desc:"7"},
+                                            {value:8,desc:"8"},
+                                            {value:9,desc:"9"},
+                                            {value:10,desc:"10"},
+                                            {value:11,desc:"11"},
+                                            {value:12,desc:"12"}],
+                                        "B":[{value:1,desc:"1"},
+                                            {value:2,desc:"2"},
+                                            {value:3,desc:"3"},
+                                            {value:4,desc:"4"},
+                                            {value:5,desc:"5"},
+                                            {value:6,desc:"6"},
+                                            {value:7,desc:"7"},
+                                            {value:8,desc:"8"},
+                                            {value:9,desc:"9"},
+                                            {value:10,desc:"10"},
+                                            {value:11,desc:"11"},
+                                            {value:12,desc:"12"}],
+                                        "C":[{value:1,desc:"1"},
+                                            {value:2,desc:"2"},
+                                            {value:3,desc:"3"},
+                                            {value:4,desc:"4"},
+                                            {value:5,desc:"5"},
+                                            {value:6,desc:"6"},
+                                            {value:7,desc:"7"},
+                                            {value:8,desc:"8"},
+                                            {value:9,desc:"9"},
+                                            {value:10,desc:"10"},
+                                            {value:11,desc:"11"},
+                                            {value:12,desc:"12"}],
+                                        "D":[{value:1,desc:"1"},
+                                            {value:2,desc:"2"},
+                                            {value:3,desc:"3"},
+                                            {value:4,desc:"4"},
+                                            {value:5,desc:"5"},
+                                            {value:6,desc:"6"},
+                                            {value:7,desc:"7"},
+                                            {value:8,desc:"8"},
+                                            {value:9,desc:"9"},
+                                            {value:10,desc:"10"},
+                                            {value:11,desc:"11"},
+                                            {value:12,desc:"12"}],
+                                        "JSQ":[{value:"1A",desc:"1A"},
+                                            {value:"1B",desc:"1B"},
+                                            {value:"2A",desc:"2A"},
+                                            {value:"2B",desc:"2B"},
+                                            {value:"3A",desc:"3A"},
+                                            {value:"3B",desc:"3B"},
+                                            {value:"4A",desc:"4A"},
+                                            {value:"4B",desc:"4B"}]}
+
+                    const houseNumber = document.querySelector('[name=house-number]');
+                    document.querySelector('[name=house-type]').addEventListener('change', function(e) {
+                        houseNumber.innerHTML = houseNumbers[this.value].reduce((acc, elem) => `${acc}<option value="${elem.value}">${elem.desc}</option>`, "");
+                    });
+                </script>
                 <label for="category">Category</label>
                 <select name="category" id="concern-category">
                     <option value="category">Category</option>
