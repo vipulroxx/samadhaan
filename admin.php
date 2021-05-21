@@ -34,12 +34,12 @@
                         </tr>
                         <?php while($row=mysqli_fetch_assoc($result)) { ?>
                         <tr>
-                            <td><?php echo $row['name'] ?></td>
-                            <td><?php echo $row['category'] ?></td>
+                            <td><?php echo strtoupper($row['name']) ?></td>
+                            <td><?php echo strtoupper($row['category']) ?></td>
                             <td ><?php echo $row['issuedon'] ?></td>
                             <td><?php echo $row['attendedon'] ?></td>
-                            <td ><?php echo $row['attendedby'] ?></td>
-                            <td><?php echo $row['agency'] ?></td>
+                            <td ><?php echo strtoupper($row['attendedby']) ?></td>
+                            <td><?php echo strtoupper($row['agency']) ?></td>
                             <td ><?php echo $row['price'] ?></td>
                             <td>
                                 <form style="border:none; margin: none; padding:0px;" class="concern-container" action="concern.php" type="POST">

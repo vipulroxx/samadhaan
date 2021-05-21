@@ -17,7 +17,7 @@
                 <h1 style="font-size:30px;">Hello, <?php echo $_SESSION['name']; ?>!</h1>
                 <a style="position:absolute; right: 0px;"href="logout.php">Logout</a>
             </div>
-            <form action="submit.php" style="position:relative; top: 6%;" method="POST">
+            <form action="submit.php" style="position:relative; top: 6%;" method="POST" enctype="multipart/form-data">
                 <h2>Log Your Concern</h2>
                 <label for="housetype">House Type</label>
                 <select name="house-type" id="house-type">
@@ -64,7 +64,7 @@
                 <label>Explain Your Concern</label><br>
                 <textarea name="concern" id="concern" rows="10" cols="50"></textarea><br>
                 <label>Upload Photo</label>
-                <input type="file" name="concern-photo">
+                <input type='file' name='file' />
                 <button type="submit" style="float: none; width: 100%;">Submit Concern</button>
             </form>
         </body>

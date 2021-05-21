@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('Asia/Kolkata');
     $sname= "localhost";
     $uname= "root";
     $password = "";
