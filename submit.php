@@ -9,47 +9,27 @@
     $userid = $_SESSION['id'];
     $name = $_SESSION['name'];
     $issuedon = date('Y-m-d H:i:s');
-
     $filename = $_FILES['file']['name'];
     $target_dir = "upload/";
+    $concern_id = ($issuedon.$userid);
+    $concern_id = str_replace(":", "", $concern_id);
+    $concern_id = str_replace("-", "", $concern_id);
+    $concern_id = str_replace(" ", "", $concern_id);
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
-
-    // Select file type
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-    // Valid file extensions
     $extensions_arr = array("jpg","jpeg","png","gif");
-
-    // Check extension
-    if( in_array($imageFileType,$extensions_arr) ){
-        // Convert to base64 
-            $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
-            $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-            // Insert record
-            //$query = "insert into images(image) values('".$image."')";
-            if (isset($category) && ($_POST['house-type'] != "Type") && ($_POST['house-number'] != "Number") && isset($concern)) {
-                $query = "INSERT INTO concern(userid, name, houseid, category, concern, issuedon, image) VALUES('$userid', '$name','$houseid','$category','$concern', '$issuedon', '$image')";
-                $result = mysqli_query($conn, $query);
-                if (!$result) {
-                    header("Location: home.php?error=unknown error occurred");
-                    exit();
-                }
-            } else {
-                header("Location: home.php?error=Form not completely filled");
+    if( in_array($imageFileType,$extensions_arr)) {
+        $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
+        $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+        if (isset($category) && ($_POST['house-type'] != "Type") && ($_POST['house-number'] != "Number") && isset($concern) && isset($image)) {
+            $query = "INSERT INTO concern(userid, concernid, name, houseid, category, concern, issuedon, image) VALUES('$userid', '$concern_id', '$name', '$houseid', '$category', '$concern', '$issuedon', '$image')";
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                header("Location: home.php?error=unknown error occurred");
+                exit();
             }
-        
+        } 
     }
-
-    // if (isset($category) && ($_POST['house-type'] != "Type") && ($_POST['house-number'] != "Number") && isset($concern)) {
-    //     $query = "INSERT INTO concern(userid, name, houseid, category, concern, issuedon, image) VALUES('$userid', '$name','$houseid','$category','$concern', '$issuedon', '$filename')";
-    //     $result = mysqli_query($conn, $query);
-    //     if (!$result) {
-    //         header("Location: home.php?error=unknown error occurred");
-    //         exit();
-    //     }
-    // } else {
-    //     header("Location: home.php?error=Form not completely filled");
-    // }
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,6 +47,8 @@
             <p style="text-align:center"><b><u>CONCERN DETAILS</u></b></p>
             <label>HOUSE</label>
             <?php echo strtoupper($houseid) ?><br><br>
+            <label>CONCERN ID</label>
+            <?php echo ($concern_id) ?><br><br>
             <label>CATEGORY</label>
             <?php echo strtoupper($category) ?><br><br>
             <label>CONCERN</label>

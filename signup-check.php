@@ -14,6 +14,7 @@
 
 		$uname = validate($_POST['uname']);
 		$pass = validate($_POST['password']);
+		$email = $_POST['email'];
 
 		$re_pass = validate($_POST['re_password']);
 		$name = validate($_POST['name']);
@@ -51,13 +52,13 @@
 				header("Location: signup.php?error=The username is taken try another&$user_data");
 				exit();
 			}else {
-			$sql2 = "INSERT INTO users(user_name, password, name) VALUES('$uname', '$pass', '$name')";
+			$sql2 = "INSERT INTO users(user_name, email, password, name) VALUES('$uname', '$email', '$pass', '$name')";
 			$result2 = mysqli_query($conn, $sql2);
 			if ($result2) {
 				header("Location: signup.php?success=Your account has been created successfully");
 				exit();
 			}else {
-					header("Location: signup.php?error=unknown error occurred&$user_data");
+					header("Location: signup.php?error=Unknown error occurred&$user_data");
 					exit();
 			}
 			}
