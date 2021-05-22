@@ -21,9 +21,9 @@
                 <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
                 <a href="logout.php">Logout</a>
             </div><br>
-            <input style="position:absolute; top: 15%; border-radius:10px;" type="text" id="search-input" onkeydown="filter()" placeholder="Search for something.." title="Type in a query">
-            <div class="concern-container" style="position: absolute; top: 22%;">
-                <table id="concern-table" style="border-collapse: collapse;"> 
+            <input type="text" id="search-input" onkeydown="filter()" placeholder="Search for something.." title="Type in a query">
+            <div class="concern-table">
+                <table id="concern-table"> 
                     <tr>
                         <th>Name</th>
                         <th>Category</th>
@@ -45,12 +45,25 @@
                         <td><?php echo strtoupper($row['agency']) ?></td>
                         <td ><?php echo $row['price'] ?></td>
                         <td>
-                            <form style="border:none; margin: none; padding:0px;" class="concern-container" action="concern.php" type="POST">
+                            <form action="concern.php" type="POST">
                                 <input type="hidden" name="concern-id" value="<?php echo $row['id']?>">
-                                <input style="float: right; background: #1690A7; padding: 10px 15px; color: #fff; border-radius: 5px; margin-right: 0px; border: none; margin-top: 1.3em; text-decoration: none;" type="submit" value="View">
+                                <input type="submit" value="View">
                             </form>
                         </td>
-                        <td style="color: #005869;"><b><?php echo $row['status'] ?></b></td>
+                        <td style="color: #005869; 
+                            <?php 
+                                if ($row['status'] == "COMPLETED") 
+                                    echo "background-color: lightblue;"
+                            ?>
+                            <?php 
+                                if ($row['status'] == "ONGOING") 
+                                    echo " background: repeating-linear-gradient(-55deg,lightblue,lightblue 10px,#fff 10px,#fff 20px);"
+                            ?>
+                            <?php
+                                if ($row['status'] == "NOT STARTED")
+                                    echo "background: linear-gradient(to bottom,#a8d6df,#a8d6df 50%,#75b8c5 50%,#75b8c5);"
+                            ?>
+                            "><b><?php echo $row['status'] ?></b></td>
                     </tr>
                     <?php } ?>
                 </table>

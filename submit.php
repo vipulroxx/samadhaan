@@ -18,11 +18,11 @@
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $extensions_arr = array("jpg","jpeg","png","gif");
-    if( in_array($imageFileType,$extensions_arr)) {
+    if (in_array($imageFileType,$extensions_arr)) {
         $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
         $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
         if (isset($category) && ($_POST['house-type'] != "Type") && ($_POST['house-number'] != "Number") && isset($concern) && isset($image)) {
-            $query = "INSERT INTO concern(userid, concernid, name, houseid, category, concern, issuedon, image) VALUES('$userid', '$concern_id', '$name', '$houseid', '$category', '$concern', '$issuedon', '$image')";
+            $query = "INSERT INTO concern(userid, concernid, name, houseid, category, concern, issuedon, image, status) VALUES('$userid', '$concern_id', '$name', '$houseid', '$category', '$concern', '$issuedon', '$image', 'NOT STARTED')";
             $result = mysqli_query($conn, $query);
             if (!$result) {
                 header("Location: home.php?error=unknown error occurred");

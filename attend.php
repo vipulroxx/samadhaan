@@ -20,7 +20,7 @@
             <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
             <a href="logout.php">Logout</a>
         </div>
-        <form action="assign.php" method="POST">
+        <form class="attend-form" action="assign.php" method="POST" enctype="multipart/form-data">
             <label>ATTENDEE NAME</label>
             <input type="text" name="attendee-name">
             <label>AGENCY NAME</label>
@@ -28,15 +28,21 @@
             <label>TOTAL PRICE</label>
             <input type="text" name="price">
             <label>UPLOAD SIGNATURE</label>
-            <input type="file" name="signature-file">
-            <div class="status-button">
+            <input type="file" name="file" />
+            <div class="controls">
                 <label>STATUS</label>
-                <input type="radio" name="status" <?php if (isset($status) && $status=="YES") echo "checked";?> value="YES">YES
-                <input type="radio" name="status" <?php if (isset($status) && $status=="NO") echo "checked";?> value="NO">NO
+                <label style="color:black;" class="radio">
+                    <input type="radio" name="status" <?php if (isset($status) && $status=="ONGOING") echo "ONGOING";?> value="ONGOING">
+                    ONGOING
+                </label>
+                <label style="color:black;" class="radio">
+                    <input type="radio" name="status" <?php if (isset($status) && $status=="COMPLETED") echo "COMPLETED";?> value="COMPLETED">
+                    COMPLETED
+                </label>
             </div>
-            <input style="float: right; background: #1690A7; padding: 10px 15px; color: #fff; border-radius: 5px; width: 100%; border: none; margin-top: 1.3em; text-decoration: none;" type="submit" value="Submit">   
+            <input class="attend-submit" type="submit" value="Submit">   
             <br>
-            <a style="text-decoration: none; color: #1690A7; margin-left: 28%;" href="admin.php">BACK TO CONCERN LIST</a>
+            <a href="admin.php">BACK TO CONCERN LIST</a>
     </body>
     <?php } ?>
 </html>

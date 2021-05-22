@@ -20,17 +20,27 @@
             <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
             <a href="logout.php">Logout</a>
         </div>
-        <div class="concern-container" style="position:absolute; top: 15%; max-width: 800px;">
+        <div class="concern-container">
             <?php echo "<h2>Concern of ".strtoupper($row['name'])."</h2>"?>
             <form class="attend-concern" action="attend.php"><button type="submit">ATTEND</button></form>
             <?php echo "<h4>CATEGORY: <u>".strtoupper($row['category'])."</u></h4>"?>
-            <?php echo "<h4>ISSUED ON: ".$row['issuedon']."</h4>"?>
-            <?php echo "<h4>ATTENDED ON: ".$row['attendedon']." BY ".strtoupper($row['attendedby'])."</h4>"?>
-            <?php echo "<h4>AGENCY: ".strtoupper($row['agency'])."</h4>"?>
+            <?php echo "<h4>CONCERN ID: <u>".strtoupper($row['concernid'])."</u></h4>"?> 
+            <?php echo "<h4>ISSUED ON: <u>".$row['issuedon']."</u></h4>"?>
+            <?php echo "<h4>ATTENDED ON: <u>".$row['attendedon']."</u> BY <u>".strtoupper($row['attendedby'])."</u></h4>"?>
+            <?php echo "<h4>AGENCY: <u>".strtoupper($row['agency'])."</u></h4>"?>
             <?php echo "<h4>PRICE: ".$row['price']." Rupees</h4>"?>
             <?php echo "<h4>CONCERN: ".$row['concern']."</h4>"?>
-            <img style="border: 1px solid black; border-radius: 5px; width: 300px; height: 300px;" src='<?php echo $row['image']; ?>' >
-            <a style="text-decoration: none; color: #1690A7; float:right; margin-top: 38%;" href="admin.php">BACK TO CONCERN LIST</a>
+            <figure>
+                <img src='<?php echo $row['image']; ?>' >
+                <figcaption><b>BEFORE</b></figcaption>
+            </figure>
+            <?php if (isset($row['completed'])) { ?>
+            <figure>
+                <img src='<?php echo $row['completed']; ?>' >
+                <figcaption><b>AFTER</b></figcaption>
+            </figure><br>
+            <?php } ?>
+            <a href="admin.php">BACK TO CONCERN LIST</a>
         </div>
         <?php } ?>
     </body>
