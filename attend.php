@@ -21,14 +21,46 @@
             <a href="logout.php">Logout</a>
         </div>
         <form class="attend-form" action="assign.php" method="POST" enctype="multipart/form-data">
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+
             <label>ATTENDEE NAME</label>
-            <input type="text" name="attendee-name">
+            <?php if (isset($_GET['attendee-name'])) { ?>
+                <input type="text" name="attendee-name"
+                value="<?php echo $_GET['attendee-name']; ?>"><br>>
+            <?php } else { ?>
+                <input type="text" 
+                        name="attendee-name"><br>
+            <?php }?>
+
             <label>AGENCY NAME</label>
-            <input type="text" name="agency">
+            <?php if (isset($_GET['agency'])) { ?>
+                <input type="text" name="agency"
+                value="<?php echo $_GET['agency']; ?>"><br>>
+            <?php } else { ?>
+                <input type="text" 
+                        name="agency"><br>
+            <?php }?>
+
             <label>TOTAL PRICE</label>
-            <input type="text" name="price">
+            <?php if (isset($_GET['price'])) { ?>
+                <input type="text" name="price"
+                value="<?php echo $_GET['price']; ?>"><br>>
+            <?php } else { ?>
+                <input type="text" 
+                        name="price"><br>
+            <?php }?>
+
             <label>UPLOAD SIGNATURE</label>
-            <input type="file" name="file" />
+            <?php if (isset($_FILES['file']['name'])) { ?>
+                <input type="file" name="file"
+                value="<?php echo $_FILES['file']['name']; ?>"><br>>
+            <?php } else { ?>
+                <input type="file" 
+                        name="file"><br>
+            <?php }?>
+
             <div class="controls">
                 <label>STATUS</label>
                 <label style="color:black;" class="radio">

@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <form action="signup-check.php" method="post">
+        <form action="signup-check.php" method="POST">
             <h2>SIGN UP</h2>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
