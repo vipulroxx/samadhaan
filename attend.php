@@ -64,11 +64,11 @@
             <div class="controls">
                 <label>STATUS</label>
                 <label style="color:black;" class="radio">
-                    <input type="radio" name="status" <?php if (isset($status) && $status=="ONGOING") echo "ONGOING";?> value="ONGOING">
+                    <input type="radio" name="status" <?php if (isset($_GET['status']) && $_GET['status']=="ONGOING") echo "ONGOING";?> value="ONGOING">
                     ONGOING
                 </label>
                 <label style="color:black;" class="radio">
-                    <input type="radio" name="status" <?php if (isset($status) && $status=="COMPLETED") echo "COMPLETED";?> value="COMPLETED">
+                    <input type="radio" name="status" <?php if (isset($_GET['status']) && $_GET['status']=="COMPLETED") echo "COMPLETED";?> value="COMPLETED">
                     COMPLETED
                 </label>
             </div>

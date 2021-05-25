@@ -1,12 +1,10 @@
 <?php
     session_start();
     include "connection.php";
-    if ((isset($_SESSION['concern-id'])) && (!empty($_POST['attendee-name'])) && (!empty($_POST['agency'])) &&  (!empty($_POST['price']))  && (!empty($_POST['status'])) && (!empty($_FILES['file']['name']))) {
+    if ((isset($_SESSION['concern-id'])) && (!empty($_POST['attendee-name'])) && (!empty($_POST['agency'])) &&  (!empty($_POST['price']))  && (!empty($_POST['status'])) && (isset($_FILES['file']['name']))) {
         $id = $_SESSION['concern-id'];
         $attendee_name = $_POST['attendee-name'];
         $agency_name = $_POST['agency'];
-        echo !empty($agency_name);
-        exit();
         $price = (int)$_POST['price'];
         $status = $_POST['status'];
         $mysqltime = date('Y-m-d H:i:s');
