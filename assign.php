@@ -8,6 +8,12 @@
         $price = (int)$_POST['price'];
         $status = $_POST['status'];
         $mysqltime = date('Y-m-d H:i:s');
+        $id = $_SESSION['concern-id'];
+        $attendee_name = $_POST['attendee-name'];
+        $agency_name = $_POST['agency'];
+        $price = (int)$_POST['price'];
+        $status = $_POST['status'];
+        $mysqltime = date('Y-m-d H:i:s');
         $filename = $_FILES['file']['name'];
         $target_dir = "upload/";
         $target_file = $target_dir.basename($_FILES["file"]["name"]);
