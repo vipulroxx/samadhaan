@@ -68,7 +68,8 @@
                     ONGOING
                 </label>
                 <label style="color:black;" class="radio">
-                    <input type="radio" name="status" <?php if (isset($_GET['status']) && $_GET['status']=="COMPLETED") echo "COMPLETED";?> value="COMPLETED">                    COMPLETED
+                    <input type="radio" name="status" <?php if (isset($_GET['status']) && $_GET['status']=="COMPLETED") echo "COMPLETED";?> value="COMPLETED">
+                    COMPLETED
                 </label>
             </div>
             <input class="attend-submit" type="submit" value="Submit">   
