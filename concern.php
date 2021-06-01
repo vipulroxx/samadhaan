@@ -20,7 +20,7 @@
             <h1>Hello, <?php echo $_SESSION['name']; ?>!</h1>
             <a href="logout.php">Logout</a>
         </div>
-        <div class="concern-container" style="width:60%;">
+        <div class="concern-container" style="width:80%;">
             <?php echo "<h2>Concern of ".strtoupper($row['name'])."</h2>"?>
             <form class="attend-concern" action="attend.php"><button type="submit">ATTEND</button></form>
             <?php echo "<h4>CATEGORY: <u>".strtoupper($row['category'])."</u></h4>"?>
@@ -31,12 +31,12 @@
             <?php echo "<h4>PRICE: ".$row['price']." Rupees</h4>"?>
             <?php echo "<h4>CONCERN: ".$row['concern']."</h4>"?>
             
-            <figure>
+            <figure style="display: inline-block; margin: 10px;">
                 <img src='<?php echo $row['image']; ?>' >
                 <figcaption><b>BEFORE</b></figcaption>
             </figure>
             <?php if (isset($row['completed'])) { ?>
-            <figure>
+            <figure style="display: inline-block; margin: 10px;">
                 <img src='<?php echo $row['completed']; ?>' >
                 <figcaption><b>AFTER</b></figcaption>
             </figure><br>
