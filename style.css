@@ -1,0 +1,273 @@
+body {
+	background: #ff4d4d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+*{
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+form {
+	width: 500px;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	color: #f00;
+}
+
+input {
+	display: block;
+	border: 2px solid #ccc;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+
+textarea {
+	display: block;
+	border: 2px solid #ccc;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+
+option {
+	display: block;
+	border: 2px solid #ccc;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+
+label {
+	color: #888;
+	font-size: 18px;
+	padding: 10px;
+}
+
+button {
+	float: right;
+	background: #f00;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	margin-top: 1.3em;
+	text-decoration: none;
+}
+
+button:hover{
+	opacity: .7;
+}
+
+.error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+.success {
+   background: #D4EDDA;
+   color: #40754C;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+.ca {
+	font-size: 14px;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	color: #444;
+}
+
+.ca:hover {
+	text-decoration: underline;
+} 
+
+#greeting {
+	display: inline;
+	background-color: white;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 10px;
+}
+
+#greeting h1 {
+	float: left;
+	color: #f00;
+}
+
+#greeting a {
+	float: right;
+	background: #f00;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	margin-top: 1.3em;
+	text-decoration: none;
+}
+
+#search-input {
+	position:absolute; 
+	top: 15%; 
+	border-radius:10px;
+}
+
+.concern-table {
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+	position:absolute; 
+	top: 22%;
+	width: 95%;	
+}
+
+.concern-table table {
+	border-collapse: collapse;
+}
+
+.concern-table table tr td form {
+	border: none;
+	margin-top:none;
+	padding: 0px;
+	width: 100%;
+}
+
+.concern-table table tr td form input{
+	float: right; 
+	background: #f00; 
+	padding: 10px 15px; 
+	color: #fff; 
+	border-radius: 5px;
+	border: none; 
+	margin-top: 1.3em; 
+	text-decoration: none;
+}
+
+.concern-container{
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+	position:absolute; 
+	top: 20%;
+	text-align: right; 
+	width: 95%;
+	margin: 0 auto;
+}
+
+.concern-container figure {
+	display: inline-block;
+	margin: 10px;
+	float: right;
+}
+
+.concern-container figure img {
+	vertical-align: top; 
+	border: 1px solid black; 
+	border-radius: 5px; 
+	width: 300px; 
+	height: 300px;
+}
+
+.concern-container figure figcaption {
+	margin-top: 10px;
+	text-align:center;
+}
+
+.concern-container a {
+	text-decoration: none; 
+	color: #f00; 
+	margin-left: 34%;
+}
+
+table {
+	width: 100%;
+	text-align: center;
+}
+
+table tr, th, td{
+	border: 2px solid #f00;
+	border-collapse: inherit;
+	padding: 5px;
+}
+
+table button{
+	border: 2px solid #f00;
+	border-collapse: inherit;
+	width: 80%;
+	margin-top:1px;
+	margin-bottom: 1px;
+}
+
+.attend-concern {
+	width: auto;
+	border: none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.attend-form {
+	position: absolute;
+	top: 20%;
+}
+
+.attend-form a {
+	text-decoration: none; 
+	color: #f00; 
+	margin-left: 28%;
+}
+
+.controls{
+	display: flex;
+}
+
+.controls label {
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.attend-submit {
+	float: right;
+	background: #f00;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	width: 100%;
+	border: none;
+	margin-top: 1.3em;
+	text-decoration: none;
+}
